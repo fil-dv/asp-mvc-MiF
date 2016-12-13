@@ -69,7 +69,6 @@
                 </div>
                 <div class="navbar-collapse collapse bg-4">
                     <ul class="nav navbar-nav">
-                        @*<li id='home'>@Html.ActionLink("Каталог", "List", "Areas")</li>*@
                         <li><a class="scroll" href="#first">"Земля круглая"</a></li>
                         <li><a class="scroll" href="#second">"Закон притяжения"</a></li>
                         <li><a class="scroll" href="#accords">Тексты/Аккорды</a></li>
@@ -87,10 +86,10 @@
     <div id="mainID" class="container-fluid bg-3 text-center">
         <div class="row panel">
 
-            <div id="regions" class="col-xs-3">
+            @*<div id="regions" class="col-xs-3">*@
                 @*@Html.Action("Menu", "Nav")*@
-            </div>
-            <div class="mymain col-xs-8">
+            @*</div>*@
+            <div class="mymain col-xs-12">
                 @RenderBody()
             </div>
         </div>

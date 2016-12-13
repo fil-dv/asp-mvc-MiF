@@ -21,13 +21,13 @@
         }
 
         .bg-1 {
-            background-color: #1abc9c; /* Green */
-            color: #ffffff;
+            background-color: #FFFFFF; /* White */
+            color: #555555;
         }
 
         .bg-2 {
-            background-color: #474e5d; /* Dark Blue */
-            color: #ffffff;
+             background-color: #F5F5F5 ; /* Light Gray */
+            color: #555555;
         }
 
         .bg-3 {
