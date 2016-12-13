@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DbLayer;
 
 namespace Web_UI.Controllers
 {
@@ -10,6 +11,10 @@ namespace Web_UI.Controllers
     {
         public ActionResult Index()
         {
+            using (var context = new DbMifEF())
+            {
+                
+            }
             return View();
         }
 

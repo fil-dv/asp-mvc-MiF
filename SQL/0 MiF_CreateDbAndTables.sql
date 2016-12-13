@@ -43,6 +43,15 @@ CREATE TABLE SongAccords([SongAccordID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 						 [SongAccordNotes] [nvarchar](MAX) NULL); 
 GO
 
+CREATE TABLE Roles([RoleID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+				   [RoleName] [nvarchar](255) not null); 
+GO
+
+CREATE TABLE Users([UserID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+				   [RoleID] int null foreign key references [dbo].Roles(RoleID),
+				   [UserName] [nvarchar](255) not null,
+				   [UserPass] [nvarchar](255) not null); 
+GO
 
 GO
 SET ANSI_PADDING OFF

@@ -51,3 +51,9 @@ D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\Newtonsoft.Json.xml
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\obj\Debug\Web_UI.csprojResolveAssemblyReference.cache
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\obj\Debug\Web_UI.dll
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\obj\Debug\Web_UI.pdb
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\DbLayer.dll
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\EntityFramework.dll
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\EntityFramework.SqlServer.dll
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\DbLayer.pdb
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\EntityFramework.xml
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\EntityFramework.SqlServer.xml

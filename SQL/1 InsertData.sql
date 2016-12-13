@@ -32,3 +32,10 @@ INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToSong) VA
 INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToSong) VALUES(2, 2, 1, N'Тишина', N'..\Content\Songs\Закон притяжения\09-Тишина.mp3');
 INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToSong) VALUES(2, 2, 1, N'У нас этого не отнять', N'..\Content\Songs\Закон притяжения\10-У нас этого не отнять.mp3');
 INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToSong) VALUES(2, 2, 1, N'Напиши мне', N'..\Content\Songs\Закон притяжения\11-Напиши мне.mp3');
+
+INSERT INTO Roles(RoleName) VALUES(N'registered');
+INSERT INTO Roles(RoleName) VALUES(N'admin');
+
+INSERT INTO Users(RoleID, UserName, UserPass) VALUES(2, N'admin', N'admin');
+				  
+				  
