@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DbLayer;
+using Web_UI.Models;
 
 namespace Web_UI.Controllers
 {
@@ -13,9 +14,11 @@ namespace Web_UI.Controllers
         {
             using (var context = new DbMifEF())
             {
-                
+                SongsModel model = new SongsModel();
+                model.Songs = context.Songs.ToList();
+                return View(model);
             }
-            return View();
+            
         }
 
         public ActionResult About()

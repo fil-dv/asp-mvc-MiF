@@ -7,13 +7,41 @@
             line-height: 1.8;
             color: #f5f6f7;
         }
+        
+        li{
+          margin: 0;
+        }
+
+        ul{
+            list-style-type:none;
+        }
 
         .my-first {
             text-align:left !important;
             }
+.li-small {
+   font-size:medium;
+}
  
+        a {
+            font-size: 16px;
+            color:#696969;
+        }
+
+        a:hover {
+            font-size: 16px;
+            color:#DCDCDC;
+            text-decoration:none;
+        }
+
+
+
         p {
             font-size: 16px;
+        }
+
+        .my-margin {
+            margin-left: 30px;
         }
 
         .margin {
@@ -56,7 +84,7 @@
         }
 
         .navbar-nav li a:hover {
-            color: #1abc9c !important;
+            color: #DCDCDC !important;
         }
 
         #price{
