@@ -61,7 +61,6 @@
     <h3>Тексты и аккорды песен</h3>
     <hr />
 
-    <div">
         @{ 
             List<SelectListItem> list =  new List<SelectListItem>();
             list.Add(new SelectListItem { Value = "0", Text = "Выбор песни", Selected = true });
@@ -70,9 +69,13 @@
             {
                 list.Add(new SelectListItem { Value = item.SongID.ToString(), Text = item.SongName });
             }
-            @Html.DropDownList("songsDDL", list, new { @class = "my-dropdown" });
+            @Html.DropDownList("songID", list, new { @class = "my-dropdown" });
         } 
+
+    <div id="Song">
+        @*Ajax region*@
     </div>
+
     <hr />
 </div>
 

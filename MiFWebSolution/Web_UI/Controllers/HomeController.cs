@@ -34,5 +34,31 @@ namespace Web_UI.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult GetSong(int id = 0)
+        {
+            using (var context = new DbMifEF())
+            {
+                string str = "";
+                Song song = null;
+                if (id != 0)
+                {
+                    song = context.Songs.Where(s => s.SongID == id).First();
+                    str = String.Format("ID песни - {0}", id);
+                }
+                else
+                {
+                    str = "Test text...";
+                }
+                
+                //if (song != null)
+                //{
+                //    str = song.SongNotes;
+                //}
+                ViewBag.SongText = str;
+                return PartialView();
+            }
+        }
     }
 }

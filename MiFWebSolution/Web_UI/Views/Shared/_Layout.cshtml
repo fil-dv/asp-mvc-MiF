@@ -48,6 +48,46 @@
             });
         });
 
+
+        $(function () {
+
+            function GetSongText() {
+
+                var id = $("#songID").val();
+                //$("#Reg").load("/Region_DDL_/GetCities/" + id);
+                //$.ajax({
+                //    type: 'GET',
+                //    url: '/Region_DDL_/GetCities/', 
+                //    data: id,
+                //    success: function (data) {
+                //        $('#Reg').html(data);
+                //    }
+                //});
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/GetSong/',
+                    data: { id: id },
+                    success: function (data) {
+                        $('#Song').html(data);
+                    }
+                });
+
+
+            }
+
+            GetSongText();
+
+            $("#songID").change(function () {
+
+                GetSongText();
+
+            });
+        });
+
+
+
+
     </script>
     
 </head>
