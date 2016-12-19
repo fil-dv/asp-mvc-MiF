@@ -1,0 +1,10 @@
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Release\DbLayer.dll.config
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Release\DbLayer.dll
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Release\DbLayer.pdb
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Release\EntityFramework.dll
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Release\EntityFramework.SqlServer.dll
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Release\EntityFramework.xml
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Release\EntityFramework.SqlServer.xml
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\obj\Release\DbLayer.csprojResolveAssemblyReference.cache
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\obj\Release\DbLayer.dll
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\obj\Release\DbLayer.pdb

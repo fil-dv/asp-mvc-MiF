@@ -57,3 +57,4 @@ D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\EntityFramework.SqlServer.dll
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\DbLayer.pdb
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\EntityFramework.xml
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\EntityFramework.SqlServer.xml
+D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\Web_UI\bin\System.Net.Http.dll

@@ -40,6 +40,12 @@
             font-size: 16px;
         }
 
+        .my-dropdown {
+            font-size: 16px;
+            color:#696969;
+            text-align:center;
+        }
+
         .my-margin {
             margin-left: 30px;
         }

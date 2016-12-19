@@ -13,7 +13,7 @@
     @{ 
         foreach (var item in Model.Songs)
         {
-            if(item.AlbumID == 1)
+            if (item.AlbumID == 1)
             {
                 <ul>
                     <li>
@@ -59,6 +59,19 @@
     <h3  class="my-margin">Тексты и аккорды песен</h3>
     <hr />
 
+    <div class="my-margin">
+        @{ 
+            List<SelectListItem> list =  new List<SelectListItem>();
+            list.Add(new SelectListItem { Value = "0", Text = "Выбор песни", Selected = true });
+
+            foreach (var item in Model.Songs)
+            {
+                list.Add(new SelectListItem { Value = item.SongID.ToString(), Text = item.SongName });
+            }
+            @Html.DropDownList("songsDDL", list, new { @class = "my-dropdown" });
+        } 
+    </div>
+    <hr />
 </div>
 
 
@@ -82,7 +95,6 @@
             <li class="li-small">Янчук Олег - гитара, клавишные</li>
             <li class="li-small">Чередниченко Алексей - барабаны</li>            
         </ul>
-
     <hr />
 </div>
 
