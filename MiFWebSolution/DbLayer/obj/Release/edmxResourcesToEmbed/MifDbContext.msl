@@ -28,19 +28,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SongAccords">
-      <EntityTypeMapping TypeName="DbMiFModelContext.SongAccord">
-        <MappingFragment StoreEntitySet="SongAccords">
-          <ScalarProperty Name="SongAccordID" ColumnName="SongAccordID" />
-          <ScalarProperty Name="SongID" ColumnName="SongID" />
-          <ScalarProperty Name="SongAccordText" ColumnName="SongAccordText" />
-          <ScalarProperty Name="SongAccordNotes" ColumnName="SongAccordNotes" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Songs">
       <EntityTypeMapping TypeName="DbMiFModelContext.Song">
         <MappingFragment StoreEntitySet="Songs">
+          <ScalarProperty Name="PathToText" ColumnName="PathToText" />
           <ScalarProperty Name="SongID" ColumnName="SongID" />
           <ScalarProperty Name="AlbumID" ColumnName="AlbumID" />
           <ScalarProperty Name="MusicAuthorID" ColumnName="MusicAuthorID" />

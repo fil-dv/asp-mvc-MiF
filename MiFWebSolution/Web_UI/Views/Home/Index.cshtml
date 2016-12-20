@@ -18,7 +18,8 @@
                 {
                     <ul>
                         <li class="my-margin">
-                            <a href="@item.PathToSong">@item.SongName</a>
+                            @*<a href="@item.PathToSong">@item.SongName</a>*@
+                            <p>@item.SongName</p>
                         </li>
                     </ul>
                 }
@@ -26,7 +27,6 @@
         }
     </div>
     <hr />
-
 </div>
 
 <!-- Second Container -->
@@ -34,7 +34,7 @@
 <div id="second" class="container-fluid bg-2 text-center">
 
     <hr />
-    <h3">Закон притяжения</h3>
+    <h3>Закон притяжения</h3>
     <hr />
     @{
         foreach (var item in Model.Songs)
@@ -43,7 +43,8 @@
             {
                 <ul>
                     <li class="my-margin">
-                        <a href="@item.PathToSong">@item.SongName</a>
+                        @*<a href="@item.PathToSong">@item.SongName</a>*@
+                        <p>@item.SongName</p>
                     </li>
                 </ul>
             }

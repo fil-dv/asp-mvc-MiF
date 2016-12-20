@@ -28,16 +28,6 @@
     <Property Name="RoleName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Users" Relationship="Self.FK__Users__RoleID__2A4B4B5E" FromRole="Roles" ToRole="Users" />
   </EntityType>
-  <EntityType Name="SongAccord">
-    <Key>
-      <PropertyRef Name="SongAccordID" />
-    </Key>
-    <Property Name="SongAccordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SongID" Type="Int32" />
-    <Property Name="SongAccordText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SongAccordNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Song" Relationship="Self.FK__SongAccor__SongI__25869641" FromRole="SongAccords" ToRole="Songs" />
-  </EntityType>
   <EntityType Name="Song">
     <Key>
       <PropertyRef Name="SongID" />
@@ -52,7 +42,7 @@
     <NavigationProperty Name="Album" Relationship="Self.FK__Songs__AlbumID__20C1E124" FromRole="Songs" ToRole="Albums" />
     <NavigationProperty Name="Author" Relationship="Self.FK__Songs__MusicAuth__21B6055D" FromRole="Songs" ToRole="Authors" />
     <NavigationProperty Name="Author1" Relationship="Self.FK__Songs__TextAutho__22AA2996" FromRole="Songs" ToRole="Authors" />
-    <NavigationProperty Name="SongAccords" Relationship="Self.FK__SongAccor__SongI__25869641" FromRole="Songs" ToRole="SongAccords" />
+    <Property Name="PathToText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -112,23 +102,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SongAccor__SongI__25869641">
-    <End Role="Songs" Type="Self.Song" Multiplicity="0..1" />
-    <End Role="SongAccords" Type="Self.SongAccord" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Songs">
-        <PropertyRef Name="SongID" />
-      </Principal>
-      <Dependent Role="SongAccords">
-        <PropertyRef Name="SongID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="DbMifEF" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Albums" EntityType="Self.Album" />
     <EntitySet Name="Authors" EntityType="Self.Author" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
-    <EntitySet Name="SongAccords" EntityType="Self.SongAccord" />
     <EntitySet Name="Songs" EntityType="Self.Song" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK__Songs__AlbumID__20C1E124" Association="Self.FK__Songs__AlbumID__20C1E124">
@@ -146,10 +123,6 @@
     <AssociationSet Name="FK__Users__RoleID__2A4B4B5E" Association="Self.FK__Users__RoleID__2A4B4B5E">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
-    <AssociationSet Name="FK__SongAccor__SongI__25869641" Association="Self.FK__SongAccor__SongI__25869641">
-      <End Role="Songs" EntitySet="Songs" />
-      <End Role="SongAccords" EntitySet="SongAccords" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
