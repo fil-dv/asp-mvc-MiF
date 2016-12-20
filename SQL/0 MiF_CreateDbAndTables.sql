@@ -1,7 +1,7 @@
---USE master;
+USE master;
    
---CREATE DATABASE DbMiF;
---GO
+CREATE DATABASE DbMiF;
+GO
 
 USE [DbMiF]
 GO
@@ -32,16 +32,11 @@ CREATE TABLE Songs([SongID][int] NOT NULL IDENTITY(1,1) PRIMARY KEY,
 				   [MusicAuthorID] int not null foreign key references [dbo].Authors(AuthorID),
 				   [TextAuthorID] int not null foreign key references [dbo].Authors(AuthorID),
 				   [SongName] [nvarchar](255) NOT NULL,
+				   [PathToText] [nvarchar](255) NULL,
 				   [PathToSong] [nvarchar](255) NULL,
 				   [SongNotes] [nvarchar](MAX) NULL);
 GO
 
-
-CREATE TABLE SongAccords([SongAccordID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-						 [SongID] int null foreign key references [dbo].Songs(SongID),
-						 [SongAccordText] [nvarchar](MAX) NOT NULL,
-						 [SongAccordNotes] [nvarchar](MAX) NULL); 
-GO
 
 CREATE TABLE Roles([RoleID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 				   [RoleName] [nvarchar](255) not null); 

@@ -28,7 +28,6 @@ namespace DbLayer
         public virtual DbSet<Album> Albums { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<SongAccord> SongAccords { get; set; }
         public virtual DbSet<Song> Songs { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

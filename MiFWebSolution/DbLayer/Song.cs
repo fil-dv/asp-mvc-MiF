@@ -14,12 +14,6 @@ namespace DbLayer
     
     public partial class Song
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Song()
-        {
-            this.SongAccords = new HashSet<SongAccord>();
-        }
-    
         public int SongID { get; set; }
         public Nullable<int> AlbumID { get; set; }
         public int MusicAuthorID { get; set; }
@@ -27,11 +21,10 @@ namespace DbLayer
         public string SongName { get; set; }
         public string PathToSong { get; set; }
         public string SongNotes { get; set; }
+        public string PathToText { get; set; }
     
         public virtual Album Album { get; set; }
         public virtual Author Author { get; set; }
         public virtual Author Author1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SongAccord> SongAccords { get; set; }
     }
 }

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DbLayer;
 using Web_UI.Models;
+using System.Reflection;
+using System.Text;
 
 namespace Web_UI.Controllers
 {
@@ -40,23 +42,43 @@ namespace Web_UI.Controllers
         {
             using (var context = new DbMifEF())
             {
-                string str = "";
+                //string path = null;
+               // MvcHtmlString text = new MvcHtmlString("");
+                List<MvcHtmlString> listStr = new List<MvcHtmlString>();
                 Song song = null;
+                
                 if (id != 0)
                 {
                     song = context.Songs.Where(s => s.SongID == id).First();
-                    str = String.Format("ID песни - {0}", id);
-                }
-                else
-                {
-                    str = "Test text...";
-                }
-                
-                //if (song != null)
-                //{
-                //    str = song.SongNotes;
-                //}
-                ViewBag.SongText = str;
+                    //str = String.Format("ID песни - {0}", id);    
+                    if (song != null)
+                    {
+                        //var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+                        //Path.GetFullPath(song.PathToText);
+                        string path = Path.Combine(Server.MapPath(song.PathToText));
+                        path = path.Replace("\\Home", "");
+                        if (System.IO.File.Exists(path))
+                        {
+                           // text = System.IO.File.ReadAllText(path, Encoding.UTF8);
+                            const int BufferSize = 128;
+                            using (var fileStream = System.IO.File.OpenRead(path))
+                            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
+                            {
+                                string line;
+                                
+                                while ((line = streamReader.ReadLine()) != null)
+                                {
+                                    listStr.Add(MvcHtmlString.Create(line.ToString()));
+                                }
+                                //text = MvcHtmlString.Create(sb.ToString());
+                               //text = sb.ToString();
+                            }
+                        }
+                        // Process line
+                    }
+                    
+                }                
+                ViewBag.SongText = listStr;
                 return PartialView();
             }
         }

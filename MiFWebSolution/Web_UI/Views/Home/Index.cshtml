@@ -63,7 +63,7 @@
 
         @{ 
             List<SelectListItem> list =  new List<SelectListItem>();
-            list.Add(new SelectListItem { Value = "0", Text = "Выбор песни", Selected = true });
+            list.Add(new SelectListItem { Value = "0", Text = @"-- Выбор песни --", Selected = true });
 
             foreach (var item in Model.Songs)
             {

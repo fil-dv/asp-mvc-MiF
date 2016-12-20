@@ -1,4 +1,10 @@
 ﻿
 
-<h2> @ViewBag.SongText</h2>
+<div id="center">
+    @foreach (var item in ViewBag.SongText)
+    {
+        <p class="my-text">@item</p>
+    }
+</div>
+    
 

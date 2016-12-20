@@ -40,6 +40,27 @@
             font-size: 16px;
         }
 
+
+        .my-text{
+            line-height: 70%;
+            white-space:pre; 
+            text-align:left; 
+        }
+#center {
+
+    margin-top:50px;
+    left: 50%; 
+    align-content:center;
+	/*width: 450px;  
+	height: 450px;*/ 
+	/*position: absolute;*/
+	/*margin-top: -225px; 
+	margin-left: -225px;*/
+}
+
+
+
+
         .my-dropdown {
             font-size: 16px;
             color:#696969;

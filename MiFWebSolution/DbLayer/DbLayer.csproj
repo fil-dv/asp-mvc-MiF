@@ -79,9 +79,6 @@
     <Compile Include="Song.cs">
       <DependentUpon>MifDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="SongAccord.cs">
-      <DependentUpon>MifDbContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>MifDbContext.tt</DependentUpon>
     </Compile>
