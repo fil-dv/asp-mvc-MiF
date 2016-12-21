@@ -166,6 +166,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\SongsModel.cs" />
+    <Compile Include="Models\TextOrAccord.cs" />
+    <Compile Include="Models\TextOrAccordLineList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

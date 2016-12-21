@@ -43,8 +43,12 @@ namespace Web_UI.Controllers
             using (var context = new DbMifEF())
             {
                 //string path = null;
-               // MvcHtmlString text = new MvcHtmlString("");
-                List<MvcHtmlString> listStr = new List<MvcHtmlString>();
+                // MvcHtmlString text = new MvcHtmlString("");
+                //List<MvcHtmlString> listStr = new List<MvcHtmlString>();
+                //List<string> listStr = new List<string>();
+                TextOrAccordLineList model = new TextOrAccordLineList();
+                model.List = new List<TextOrAccord>();
+                //List<TextOrAccord> model = new List<TextOrAccord>();
                 Song song = null;
                 
                 if (id != 0)
@@ -68,7 +72,23 @@ namespace Web_UI.Controllers
                                 
                                 while ((line = streamReader.ReadLine()) != null)
                                 {
-                                    listStr.Add(MvcHtmlString.Create(line.ToString()));
+                                    TextOrAccord textOrAcc = new TextOrAccord();
+
+                                    if (line.Length > 0)
+                                    { 
+                                        if (line[0] == '@')
+                                        {
+                                            line = line.Remove(0, 1);
+                                            textOrAcc.IsText = false;
+                                        }
+                                        else
+                                        {
+                                            textOrAcc.IsText = true;
+                                        }                                        
+                                    }
+                                    textOrAcc.Str = line;
+                                    model.List.Add(textOrAcc);
+                                    //listStr.Add(line);
                                 }
                                 //text = MvcHtmlString.Create(sb.ToString());
                                //text = sb.ToString();
@@ -78,8 +98,8 @@ namespace Web_UI.Controllers
                     }
                     
                 }                
-                ViewBag.SongText = listStr;
-                return PartialView();
+                //ViewBag.SongText = listStr;
+                return PartialView(model);
             }
         }
     }

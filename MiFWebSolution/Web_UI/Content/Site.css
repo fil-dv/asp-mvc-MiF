@@ -47,6 +47,14 @@
             white-space:pre; 
             text-align:center; 
         }
+        .my-accords{
+            line-height: 70%;
+            white-space:pre; 
+            text-align:center; 
+            font-size: 16px;
+            font-style:italic;
+            color:darkgrey;
+        }
 
 
 	    /*.wrapper {	    
