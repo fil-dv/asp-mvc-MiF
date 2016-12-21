@@ -5,6 +5,7 @@ GO
 INSERT INTO Authors(AuthorFirstName, AuthorSurname) VALUES(N'Дмитрий', N'Филоненко');
 INSERT INTO Authors(AuthorFirstName, AuthorSurname) VALUES(N'Дмитрий', N'Меркулов');
 INSERT INTO Authors(AuthorFirstName, AuthorSurname) VALUES(N'Алексей', N'Чередниченко');
+INSERT INTO Authors(AuthorFirstName, AuthorSurname) VALUES(N'Николай', N'Заболоцкий');
 
 
 INSERT INTO Albums(AlbumName, AlbumYear, AlbumDirector) VALUES(N'Земля круглая', 2011, N'Павел Балматов');
@@ -32,6 +33,18 @@ INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToText, Pa
 INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToText, PathToSong) VALUES(2, 2, 1, N'Тишина', N'..\Content\Texts\Тишина.txt', N'..\Content\Songs\Закон притяжения\Тишина.mp3');
 INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToText, PathToSong) VALUES(2, 2, 1, N'У нас этого не отнять', N'..\Content\Texts\У нас этого не отнять.txt', N'..\Content\Songs\Закон притяжения\У нас этого не отнять.mp3');
 INSERT INTO Songs(AlbumID, MusicAuthorID, TextAuthorID, SongName, PathToText, PathToSong) VALUES(2, 2, 1, N'Напиши мне', N'..\Content\Texts\Напиши мне.txt', N'..\Content\Songs\Закон притяжения\Напиши мне.mp3');
+
+
+--Без альбомов
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'Валенсия', N'..\Content\Texts\Валенсия.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'Видно суждено', N'..\Content\Texts\Видно суждено.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'Наказание', N'..\Content\Texts\Наказание.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'Напои меня', N'..\Content\Texts\Напои меня.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'На прощанье', N'..\Content\Texts\На прощанье.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'Параллели', N'..\Content\Texts\Параллели.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'Русский', N'..\Content\Texts\Русский.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 4, N'Сентябрь', N'..\Content\Texts\Сентябрь.txt');
+INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1, N'Транскрипция', N'..\Content\Texts\Транскрипция.txt');
 
 INSERT INTO Roles(RoleName) VALUES(N'registered');
 INSERT INTO Roles(RoleName) VALUES(N'admin');

@@ -1,6 +1,12 @@
 ﻿
 <div style="margin-top:30px;">
-    <div class="wrapper">
+    @*<div class="wrapper">
+        @foreach (var item in ViewBag.SongText)
+        {
+            <p class="my-text">@item</p>
+        }
+    </div>*@
+    <div>
         @foreach (var item in ViewBag.SongText)
         {
             <p class="my-text">@item</p>

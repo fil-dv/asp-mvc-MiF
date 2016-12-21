@@ -45,14 +45,14 @@
         .my-text{
             line-height: 70%;
             white-space:pre; 
-            text-align:left; 
+            text-align:center; 
         }
 
 
-	    .wrapper {	    
+	    /*.wrapper {	    
             width:19%;
 	        margin:0 auto;
-	    }
+	    }*/
 
 
         .my-dropdown {
