@@ -165,6 +165,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auth\RegisterModel.cs" />
     <Compile Include="Models\SongsModel.cs" />
     <Compile Include="Models\TextOrAccord.cs" />
     <Compile Include="Models\TextOrAccordLineList.cs" />
@@ -185,6 +186,9 @@
     <None Include="Properties\PublishProfiles\mif.pubxml" />
     <None Include="Properties\PublishProfiles\mif1.pubxml" />
     <None Include="Properties\PublishProfiles\mif2.pubxml" />
+    <None Include="Properties\PublishProfiles\mif3.pubxml" />
+    <None Include="Properties\PublishProfiles\mif4.pubxml" />
+    <None Include="Properties\PublishProfiles\mif5.pubxml" />
     <None Include="Properties\PublishProfiles\mifWeb.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -214,10 +218,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\GetSong.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\GetSong\" />
   </ItemGroup>
   <ItemGroup>

@@ -95,8 +95,8 @@
 <body>
     
     <a style="visibility: hidden" ></a>
-    <!-- Navbar -->
-    <nav id="start" class="navbar navbar-default bg-4">
+    <!-- Navbar for desktop -->
+    <nav id="start" class="navbar navbar-default bg-4 hidden-xs hidden-sm">
         <div class="navbar navbar-inverse bg-4 navbar-fixed-top">
             <div class="container bg-4">
                 <div class="navbar-header bg-4">
@@ -118,6 +118,20 @@
                     @Html.Partial("_LoginPartial")   @*!!!!!!!Авторизация*@
 
                 </div>            
+            </div>
+        </div>
+    </nav>
+
+    <!-- vertical navbar for mobiles and tablets -->
+    <nav id="startMob" class="navbar navbar-default bg-4 hidden-lg hidden-md hidden-print">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    <li><a class="scroll" href="#first">"Земля круглая"</a></li>
+                    <li><a class="scroll" href="#second">"Закон притяжения"</a></li>
+                    <li><a class="scroll" href="#accords">Тексты/Аккорды</a></li>
+                    <li><a class="scroll" href="#about">О группе</a></li>
+                </ul>
             </div>
         </div>
     </nav>
