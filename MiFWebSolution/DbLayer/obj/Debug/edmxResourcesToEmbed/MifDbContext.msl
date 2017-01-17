@@ -45,9 +45,10 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="DbMiFModelContext.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="isLogIn" ColumnName="isLogIn" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="UserPass" ColumnName="UserPass" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -16,8 +16,9 @@ namespace DbLayer
     {
         public int UserID { get; set; }
         public Nullable<int> RoleID { get; set; }
-        public string UserName { get; set; }
         public string UserPass { get; set; }
+        public string UserEmail { get; set; }
+        public bool isLogIn { get; set; }
     
         public virtual Role Role { get; set; }
     }

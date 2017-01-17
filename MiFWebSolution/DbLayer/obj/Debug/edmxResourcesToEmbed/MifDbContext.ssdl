@@ -43,8 +43,9 @@
     </Key>
     <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RoleID" Type="int" />
-    <Property Name="UserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="UserEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="UserPass" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="isLogIn" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK__Songs__AlbumID__145C0A3F">
     <End Role="Albums" Type="Self.Albums" Multiplicity="0..1" />

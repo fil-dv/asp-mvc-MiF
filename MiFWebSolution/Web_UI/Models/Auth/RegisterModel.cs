@@ -9,17 +9,17 @@ namespace Web_UI.Models.Auth
     public class RegisterModel
     {
         [Required(ErrorMessage = "Обязательное поле")]
-        [StringLength(255, ErrorMessage = "Минимум 3 символa", MinimumLength = 3)]
-        [Display(Name = "Логин:")]
-        public string Login { get; set; }
+        [Display(Name = "Email:")]
+        [EmailAddress(ErrorMessage = "Некорректный адрес")]
+        public string Email { get; set; }
         [Required(ErrorMessage = "Обязательное поле")]
-        [StringLength(255, ErrorMessage = "Минимум 7 символов", MinimumLength = 7)]
+       //[StringLength(255, ErrorMessage = "Минимум 7 символов", MinimumLength = 7)]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль:")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Обязательное поле")]
-        [StringLength(255, ErrorMessage = "Минимум 7 символов", MinimumLength = 7)]
+        //[StringLength(255, ErrorMessage = "Минимум 7 символов", MinimumLength = 7)]
         [DataType(DataType.Password)]
         [Compare("Password")]
         [Display(Name = "Подтверждение:")]

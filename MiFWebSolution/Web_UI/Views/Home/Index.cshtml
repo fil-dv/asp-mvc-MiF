@@ -4,6 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+    @{
+        if (TempData["registerSuccess"] != null)
+        {
+            <div style="color:forestgreen">
+                @TempData["registerSuccess"]
+            </div>
+        }
+    }
+            
  <!--  First Container -->
 <div id="first" class="container-fluid bg-1 text-center">
 
