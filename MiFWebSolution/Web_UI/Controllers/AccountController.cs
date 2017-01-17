@@ -10,7 +10,7 @@ namespace Web_UI.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
+        
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -52,9 +52,49 @@ namespace Web_UI.Controllers
             }
         }
 
+        [AllowAnonymous]
         public ActionResult Login()
         {
-            return RedirectToAction("Index", "Home");
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var context = new DbMifEF())
+                {
+                    List<User> users = context.Users.Where(u => u.UserEmail == model.Email).ToList();
+                    if (users.Count > 0)
+                    {
+                        if (users[0].UserPass == model.Password.GetHashCode().ToString())
+                        {
+                            Session["isLogIn"] = true;
+                            Session["userName"] = users[0].UserEmail;
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else
+                        {
+                            ViewBag.LoginError = "Не верный пароль.";
+                            return View();
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.LoginError = "Не верный email.";
+                        return View();
+                    }
+                   
+                }
+            }
+            else
+            {
+                return View();
+            }
+                   
         }
     }
 }

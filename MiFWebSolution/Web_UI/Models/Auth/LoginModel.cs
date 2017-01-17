@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Web_UI.Models.Auth
 {
-    public class RegisterModel
+    public class LoginModel
     {
         [Required(ErrorMessage = "Обязательное поле")]
         [Display(Name = "Email:")]
@@ -14,16 +14,9 @@ namespace Web_UI.Models.Auth
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Обязательное поле")]
-       //[StringLength(255, ErrorMessage = "Минимум 7 символов", MinimumLength = 7)]
+        //[StringLength(255, ErrorMessage = "Минимум 7 символов", MinimumLength = 7)]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль:")]
         public string Password { get; set; }
-
-        [Required(ErrorMessage = "Обязательное поле")]
-        //[StringLength(255, ErrorMessage = "Минимум 7 символов", MinimumLength = 7)]
-        [DataType(DataType.Password)]
-        [Compare("Password")]
-        [Display(Name = "Подтверждение:")]
-        public string PasswordRepeat { get; set; }
     }
 }

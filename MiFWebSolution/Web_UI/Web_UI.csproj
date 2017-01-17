@@ -165,6 +165,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auth\LoginModel.cs" />
     <Compile Include="Models\Auth\RegisterModel.cs" />
     <Compile Include="Models\SongsModel.cs" />
     <Compile Include="Models\TextOrAccord.cs" />
@@ -219,6 +220,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\GetSong.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
