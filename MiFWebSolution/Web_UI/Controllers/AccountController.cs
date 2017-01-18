@@ -41,7 +41,6 @@ namespace Web_UI.Controllers
                         context.Users.Add(newUser);
                         context.SaveChanges();
                         TempData["registerSuccess"] = "Регистрация прошла успешно.";
-                        //TempData.Keep("Регистрация прошла успешно.");
                     }
                 }                
                 return RedirectToAction("Index", "Home");
@@ -74,6 +73,7 @@ namespace Web_UI.Controllers
                         {
                             Session["isLogIn"] = true;
                             Session["userName"] = users[0].UserEmail;
+                            Session["userID"] = users[0].UserID;
                             return RedirectToAction("Index", "Home");
                         }
                         else
@@ -86,15 +86,77 @@ namespace Web_UI.Controllers
                     {
                         ViewBag.LoginError = "Не верный email.";
                         return View();
-                    }
-                   
+                    }                   
                 }
             }
             else
             {
                 return View();
-            }
-                   
+            }                   
         }
+
+        [AllowAnonymous]
+        public ActionResult Logout()
+        {
+            Session["isLogIn"] = false;
+            Session["userName"] = null;
+            Session["userID"] = null;
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult AboutUser()
+        {
+            if (Session["userID"] != null)
+            {
+                using (var context = new DbMifEF())
+                {
+                    int id;
+                    if (Int32.TryParse(Session["userID"].ToString(), out id))
+                    {
+                        var user = context.Users.Where(u => u.UserID == id).First();
+                        LoginModel model = new LoginModel { Email = user.UserEmail };
+                        return View(model);
+                    }
+                }
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [AllowAnonymous]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(ChangePasswordModel model)
+        {
+            if (Session["userID"] != null)
+            {
+                using (var context = new DbMifEF())
+                {
+                    int id;
+                    if (Int32.TryParse(Session["userID"].ToString(), out id))
+                    {
+                        var user = context.Users.Where(u => u.UserID == id).First();
+                        if (model.OldPassword.GetHashCode().ToString() == user.UserPass)
+                        {
+                            user.UserPass = model.Password.GetHashCode().ToString();
+                            context.SaveChanges();
+                            TempData["passwordChange"] = "Пароль успешно изменен.";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                TempData["passwordChange"] = "Не удалось изменить пароль.";
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        
     }
 }

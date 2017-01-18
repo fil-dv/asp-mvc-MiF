@@ -12,6 +12,14 @@
             </div>
         }
     }
+    @{
+        if (TempData["passwordChange"] != null)
+        {
+            <div style="color:forestgreen">
+                @TempData["passwordChange"]
+            </div>
+        }
+    }
             
  <!--  First Container -->
 <div id="first" class="container-fluid bg-1 text-center">
