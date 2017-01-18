@@ -20,7 +20,58 @@
             </div>
         }
     }
-            
+  
+
+<!-- Navbar for desktop -->
+<div id="start">
+    @*<nav class="navbar navbar-default bg-4 hidden-xs hidden-sm hi">*@
+        <div class="navbar navbar-inverse bg-4 navbar-fixed-top hidden-xs hidden-sm">
+            <div class="container bg-4">
+
+                <div class="navbar-collapse collapse bg-4">
+                    <ul class="nav navbar-nav">
+                        <li><a class="scroll" href="#first">"Земля круглая"</a></li>
+                        <li><a class="scroll" href="#second">"Закон притяжения"</a></li>
+                        @{
+                            if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
+                            {
+                                <li><a class="scroll" href="#accords">Тексты/Аккорды</a></li>
+                            }
+                        }
+                        
+                        <li><a class="scroll" href="#about">О группе</a></li>
+                    </ul>
+
+                    @Html.Partial("_LoginPartial")   @*Авторизация*@
+
+                </div>
+            </div>
+        </div>
+    @*</nav>*@
+
+    <!-- vertical navbar for mobiles and tablets -->
+    @*<nav class="navbar navbar-default bg-4 hidden-lg hidden-md hidden-print">*@
+        <div class="navbar navbar-inverse navbar-static-top hidden-lg hidden-md hidden-print">
+            <div class="container">
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    <li class="text-left"><a class="scroll" href="#first">"Земля круглая"</a></li>
+                    <li class="text-left"><a class="scroll" href="#second">"Закон притяжения"</a></li>
+                    @{
+                        if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
+                        {
+                            <li><a class="scroll" href="#accords">Тексты/Аккорды</a></li>
+                        }
+                    }
+                    <li class="text-left"><a class="scroll" href="#about">О группе</a></li>
+                </ul>
+
+                @Html.Partial("_LoginPartial")   @*@Авторизация*@
+
+            </div>
+        </div>
+    @*</nav>*@
+</div>
+          
  <!--  First Container -->
 <div id="first" class="container-fluid bg-1 text-center">
 
@@ -73,29 +124,37 @@
 
 
 <!-- Third Container -->
-<div id="accords" class="container-fluid bg-1 text-info">
+@{
+    if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
+    {
+        <div id="accords" class="container-fluid bg-1 text-info">
 
-    <hr />
-    <h3>Тексты и аккорды песен</h3>
-    <hr />
 
-        @{ 
-            List<SelectListItem> list =  new List<SelectListItem>();
-            list.Add(new SelectListItem { Value = "0", Text = @"-- Выбор песни --", Selected = true });
 
-            foreach (var item in Model.Songs)
-            {
-                list.Add(new SelectListItem { Value = item.SongID.ToString(), Text = item.SongName });
+            <hr />
+            <h3>Тексты и аккорды песен</h3>
+            <hr />
+
+            @{
+                List<SelectListItem> list = new List<SelectListItem>();
+                list.Add(new SelectListItem { Value = "0", Text = @"-- Выбор песни --", Selected = true });
+
+                foreach (var item in Model.Songs)
+                {
+                    list.Add(new SelectListItem { Value = item.SongID.ToString(), Text = item.SongName });
+                }
+                @Html.DropDownList("songID", list, new { @class = "my-dropdown" });
             }
-            @Html.DropDownList("songID", list, new { @class = "my-dropdown" });
-        } 
 
-    <div id="Song">
-        @*Ajax region*@
-    </div>
+            <div id="Song">
+                @*Ajax region*@
+            </div>
 
-    <hr />
-</div>
+            <hr />
+        </div>
+     }
+}
+
 
 
 <!-- Fourth Container (Grid) -->
