@@ -191,6 +191,7 @@
     <None Include="Properties\PublishProfiles\mif3.pubxml" />
     <None Include="Properties\PublishProfiles\mif4.pubxml" />
     <None Include="Properties\PublishProfiles\mif5.pubxml" />
+    <None Include="Properties\PublishProfiles\mif6.pubxml" />
     <None Include="Properties\PublishProfiles\mifWeb.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

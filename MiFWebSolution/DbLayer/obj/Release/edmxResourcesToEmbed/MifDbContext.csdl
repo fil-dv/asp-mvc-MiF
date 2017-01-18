@@ -50,9 +50,10 @@
     </Key>
     <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RoleID" Type="Int32" />
-    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="UserPass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Role" Relationship="Self.FK__Users__RoleID__2A4B4B5E" FromRole="Users" ToRole="Roles" />
+    <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="isLogIn" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK__Songs__AlbumID__20C1E124">
     <End Role="Albums" Type="Self.Album" Multiplicity="0..1" />

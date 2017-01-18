@@ -1,0 +1,45 @@
+﻿@model Web_UI.Models.Auth.LoginModel
+
+@{
+    ViewBag.Title = "AboutUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Личный кабинет</h2>
+    <hr />
+    <div class="panel">
+        <span>
+            @Html.DisplayNameFor(model => model.Email)
+        </span>
+
+        <span>
+            @Html.DisplayFor(model => model.Email)
+        </span>
+    </div>
+    <br />
+    @*<a id="passLink" href="#">Изменить пароль</a>*@
+    @Html.ActionLink("Изменить пароль", "ChangePassword", "Account")
+    <div id="passwordChange"></div>  @*ajax*@
+</div>
+<hr />
+<br /><br /><br />
+<p>    
+    @Html.ActionLink("Вернуться на главную", "Index", "Home")
+</p>
+
+
+@*<script>
+    $("#passLink").click(function () {
+
+        $.ajax({
+            type: 'POST',
+            url: '/Account/ChangePassword/',
+            success: function (data) {
+                $('#passwordChange').html(data);
+            }
+        });
+
+    });
+
+</script>*@
