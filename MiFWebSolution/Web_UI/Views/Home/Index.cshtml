@@ -4,23 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    @{
-        if (TempData["registerSuccess"] != null)
-        {
-            <div style="color:forestgreen">
-                @TempData["registerSuccess"]
-            </div>
-        }
-    }
-    @{
-        if (TempData["passwordChange"] != null)
-        {
-            <div style="color:forestgreen">
-                @TempData["passwordChange"]
-            </div>
-        }
-    }
-  
+   
 
 <!-- Navbar for desktop -->
 <div id="start">
@@ -59,7 +43,7 @@
                     @{
                         if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
                         {
-                            <li><a class="scroll" href="#accords">Тексты/Аккорды</a></li>
+                            <li class="text-left"><a class="scroll" href="#accords">Тексты/Аккорды</a></li>
                         }
                     }
                     <li class="text-left"><a class="scroll" href="#about">О группе</a></li>
@@ -71,6 +55,23 @@
         </div>
     @*</nav>*@
 </div>
+
+@{
+    if (TempData["registerSuccess"] != null)
+    {
+        <div style="color:forestgreen">
+            @TempData["registerSuccess"]
+        </div>
+    }
+}
+@{
+    if (TempData["passwordChange"] != null)
+    {
+        <div style="color:forestgreen">
+            @TempData["passwordChange"]
+        </div>
+    }
+}
           
  <!--  First Container -->
 <div id="first" class="container-fluid bg-1 text-center">

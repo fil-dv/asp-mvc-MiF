@@ -18,9 +18,14 @@
         </span>
     </div>
     <br />
-    @*<a id="passLink" href="#">Изменить пароль</a>*@
-    @Html.ActionLink("Изменить пароль", "ChangePassword", "Account")
-    <div id="passwordChange"></div>  @*ajax*@
+    
+
+    @using (Html.BeginForm("ChangePassword", "Account", FormMethod.Get))
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" class="btn btn-default btn-lg" value="Изменить пароль" />
+    }
+
 </div>
 <hr />
 <br /><br /><br />

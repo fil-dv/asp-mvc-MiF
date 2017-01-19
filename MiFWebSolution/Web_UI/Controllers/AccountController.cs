@@ -125,6 +125,10 @@ namespace Web_UI.Controllers
         [AllowAnonymous]
         public ActionResult ChangePassword()
         {
+            if (Session["isLogIn"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -134,6 +138,7 @@ namespace Web_UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePassword(ChangePasswordModel model)
         {
+           
             if (Session["userID"] != null)
             {
                 using (var context = new DbMifEF())
@@ -147,16 +152,29 @@ namespace Web_UI.Controllers
                             user.UserPass = model.Password.GetHashCode().ToString();
                             context.SaveChanges();
                             TempData["passwordChange"] = "Пароль успешно изменен.";
+                            return RedirectToAction("Index", "Home");
                         }
+                        else
+                        {
+                            ViewBag.ChangeError = "Не верный старый пароль.";
+                            return View();
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.ChangeError = "Не удалось изменить пароль.";
+                        return View();
                     }
                 }
             }
             else
             {
-                TempData["passwordChange"] = "Не удалось изменить пароль.";
-            }
-            return RedirectToAction("Index", "Home");
+                ViewBag.ChangeError = "Не удалось изменить пароль.";
+                return View();
+            }            
         }
+
+
         
     }
 }
