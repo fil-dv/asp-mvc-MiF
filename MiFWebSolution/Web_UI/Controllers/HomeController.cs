@@ -7,6 +7,7 @@ using DbLayer;
 using Web_UI.Models;
 using System.Reflection;
 using System.Text;
+using Web_UI.Infrastructure;
 
 namespace Web_UI.Controllers
 {
@@ -18,9 +19,25 @@ namespace Web_UI.Controllers
             {
                 SongsModel model = new SongsModel();
                 model.Songs = context.Songs.ToList();
+                WriteToLog();
                 return View(model);
             }
             
+        }
+
+        void WriteToLog()
+        {
+            string logMessage = "";
+            if (Session["userName"] != null)
+            {
+                logMessage = Session["userName"].ToString();
+            }
+            else
+            {
+                logMessage = "?";
+            }
+            logMessage += " +";
+            Logger.AddMessageToLog(logMessage);
         }
 
         public ActionResult About()
