@@ -21,8 +21,7 @@ namespace Web_UI.Controllers
                 model.Songs = context.Songs.ToList();
                 WriteToLog();
                 return View(model);
-            }
-            
+            }            
         }
 
         void WriteToLog()
@@ -58,29 +57,20 @@ namespace Web_UI.Controllers
         public ActionResult GetSong(int id = 0)
         {
             using (var context = new DbMifEF())
-            {
-                //string path = null;
-                // MvcHtmlString text = new MvcHtmlString("");
-                //List<MvcHtmlString> listStr = new List<MvcHtmlString>();
-                //List<string> listStr = new List<string>();
+            {                
                 TextOrAccordLineList model = new TextOrAccordLineList();
                 model.List = new List<TextOrAccord>();
-                //List<TextOrAccord> model = new List<TextOrAccord>();
                 Song song = null;
                 
                 if (id != 0)
                 {
                     song = context.Songs.Where(s => s.SongID == id).First();
-                    //str = String.Format("ID песни - {0}", id);    
                     if (song != null)
                     {
-                        //var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
-                        //Path.GetFullPath(song.PathToText);
                         string path = Path.Combine(Server.MapPath(song.PathToText));
                         path = path.Replace("\\Home", "");
                         if (System.IO.File.Exists(path))
                         {
-                           // text = System.IO.File.ReadAllText(path, Encoding.UTF8);
                             const int BufferSize = 128;
                             using (var fileStream = System.IO.File.OpenRead(path))
                             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
@@ -105,17 +95,11 @@ namespace Web_UI.Controllers
                                     }
                                     textOrAcc.Str = line;
                                     model.List.Add(textOrAcc);
-                                    //listStr.Add(line);
                                 }
-                                //text = MvcHtmlString.Create(sb.ToString());
-                               //text = sb.ToString();
                             }
                         }
-                        // Process line
-                    }
-                    
-                }                
-                //ViewBag.SongText = listStr;
+                    }                    
+                }
                 return PartialView(model);
             }
         }

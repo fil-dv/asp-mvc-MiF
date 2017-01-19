@@ -37,6 +37,14 @@ CREATE TABLE Songs([SongID][int] NOT NULL IDENTITY(1,1) PRIMARY KEY,
 				   [SongNotes] [nvarchar](MAX) NULL);
 GO
 
+ALTER TABLE Songs ADD ExternalReference [nvarchar](255) null 
+
+
+
+
+
+GO
+
 
 CREATE TABLE Roles([RoleID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 				   [RoleName] [nvarchar](255) not null); 

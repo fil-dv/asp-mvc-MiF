@@ -41,6 +41,7 @@
           <Property Name="PathToText" Type="nvarchar" MaxLength="255" />
           <Property Name="PathToSong" Type="nvarchar" MaxLength="255" />
           <Property Name="SongNotes" Type="nvarchar(max)" />
+          <Property Name="ExternalReference" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -170,6 +171,7 @@
           <NavigationProperty Name="Author" Relationship="Self.FK__Songs__MusicAuth__21B6055D" FromRole="Songs" ToRole="Authors" />
           <NavigationProperty Name="Author1" Relationship="Self.FK__Songs__TextAutho__22AA2996" FromRole="Songs" ToRole="Authors" />
           <Property Name="PathToText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ExternalReference" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -289,6 +291,7 @@
           <EntitySetMapping Name="Songs">
             <EntityTypeMapping TypeName="DbMiFModelContext.Song">
               <MappingFragment StoreEntitySet="Songs">
+                <ScalarProperty Name="ExternalReference" ColumnName="ExternalReference" />
                 <ScalarProperty Name="PathToText" ColumnName="PathToText" />
                 <ScalarProperty Name="SongID" ColumnName="SongID" />
                 <ScalarProperty Name="AlbumID" ColumnName="AlbumID" />

@@ -51,7 +51,23 @@ INSERT INTO Roles(RoleName) VALUES(N'admin');
 
 INSERT INTO Users(RoleID, UserName, UserPass) VALUES(2, N'admin', N'admin');
 
-
-
-				  
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNclhRV2RhVnFXaFk/view' where SongID = 1 --1	С Тобой
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNc3pVYmNlYlJuUXM/view' where SongID = 2 --2	Маньяк Сэм
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNZURuQS16Sl9yMWs/view' where SongID = 3 --3	Доза
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNQVVacU9fRm50QUU/view' where SongID = 4 --4	Закружила
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNNFEwbTVHdFZ4d2M/view' where SongID = 5 --5	Редко Вместе
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNdUR6dlpQN2ZnWEE/view' where SongID = 6 --6	Не Успеть
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNYkdaeDVuRHF2YVU/view' where SongID = 7 --7	Земля Круглая
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNVXFYemdsWl9iWk0/view' where SongID = 8 --8	Перелетные птицы
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNR2tKMmpqTTVBRDg/view' where SongID = 9 --9	Река
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNNnY5eUJrdTFKMlk/view' where SongID = 10 --10	Закон притяжения
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNX29rWnNubWNfN0k/view' where SongID = 11 --11	Волны
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNMWkxYzhfRTM1ZjQ/view' where SongID = 12 --12	На пляже
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNYlZDU2ZDTXIydlk/view' where SongID = 13 --13	История гвоздя
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNZDdMMFlIMTFNcTA/view' where SongID = 14 --14	Друзья
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNN19KQ2Y3dUZza0U/view' where SongID = 15 --15	Дуэль
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNcTBSQ3BXdHhVX2c/view' where SongID = 16 --16	Тишина
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNeFRMMjNpcXVBOFk/view' where SongID = 17 --17	У нас этого не отнять
+update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNT2xZSTR3TkdfZm8/view' where SongID = 18 --18	Напиши мне
+			  
 				  

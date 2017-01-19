@@ -2,13 +2,10 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-   
+}   
 
 <!-- Navbar for desktop -->
 <div id="start">
-    @*<nav class="navbar navbar-default bg-4 hidden-xs hidden-sm hi">*@
         <div class="navbar navbar-inverse bg-4 navbar-fixed-top hidden-xs hidden-sm">
             <div class="container bg-4">
 
@@ -31,10 +28,9 @@
                 </div>
             </div>
         </div>
-    @*</nav>*@
+
 
     <!-- vertical navbar for mobiles and tablets -->
-    @*<nav class="navbar navbar-default bg-4 hidden-lg hidden-md hidden-print">*@
         <div class="navbar navbar-inverse navbar-static-top hidden-lg hidden-md hidden-print">
             <div class="container">
                 <ul class="nav nav-pills nav-stacked" role="tablist">
@@ -53,7 +49,6 @@
 
             </div>
         </div>
-    @*</nav>*@
 </div>
 
 @{
@@ -88,7 +83,8 @@
                     <ul>
                         <li class="my-margin">
                             @*<a href="@item.PathToSong">@item.SongName</a>*@
-                            <p>@item.SongName</p>
+                            @*<p>@item.SongName</p>*@
+                            <a href="@item.ExternalReference">@item.SongName</a>
                         </li>
                     </ul>
                 }
@@ -113,7 +109,8 @@
                 <ul>
                     <li class="my-margin">
                         @*<a href="@item.PathToSong">@item.SongName</a>*@
-                        <p>@item.SongName</p>
+                        @*<p>@item.SongName</p>*@
+                        <a href="@item.ExternalReference">@item.SongName</a>
                     </li>
                 </ul>
             }
@@ -159,7 +156,19 @@
 
 
 <!-- Fourth Container (Grid) -->
-<div id="about" class="container-fluid bg-2 text-info">
+@{
+    string colorStr = "";
+
+    if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
+    {
+        colorStr = "container-fluid bg-2 text-info";
+    }
+    else
+    {
+        colorStr = "container-fluid bg-1 text-info";
+    }
+
+<div id="about" class="@colorStr">
 
     <hr />
     <h3>О группе:</h3>
@@ -183,7 +192,7 @@
     </div>
     <hr />
 </div>
-
+}
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">

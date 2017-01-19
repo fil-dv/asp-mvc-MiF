@@ -43,6 +43,7 @@
     <NavigationProperty Name="Author" Relationship="Self.FK__Songs__MusicAuth__21B6055D" FromRole="Songs" ToRole="Authors" />
     <NavigationProperty Name="Author1" Relationship="Self.FK__Songs__TextAutho__22AA2996" FromRole="Songs" ToRole="Authors" />
     <Property Name="PathToText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalReference" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="User">
     <Key>

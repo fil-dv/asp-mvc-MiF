@@ -22,6 +22,7 @@ namespace DbLayer
         public string PathToSong { get; set; }
         public string SongNotes { get; set; }
         public string PathToText { get; set; }
+        public string ExternalReference { get; set; }
     
         public virtual Album Album { get; set; }
         public virtual Author Author { get; set; }
