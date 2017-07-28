@@ -8,3 +8,13 @@ D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\bin\Debug\EntityFramework.SqlServ
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\obj\Debug\DbLayer.dll
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\obj\Debug\DbLayer.pdb
 D:\Dima\!Шаг\ASP\MiF\MiFWebSolution\DbLayer\obj\Debug\DbLayer.csprojResolveAssemblyReference.cache
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\bin\Debug\DbLayer.dll.config
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\bin\Debug\DbLayer.dll
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\bin\Debug\DbLayer.pdb
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\bin\Debug\EntityFramework.dll
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\bin\Debug\EntityFramework.xml
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\obj\Debug\DbLayer.csprojResolveAssemblyReference.cache
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\obj\Debug\DbLayer.dll
+D:\Dima\Programming\git\asp-mvc-MiF\MiFWebSolution\DbLayer\obj\Debug\DbLayer.pdb

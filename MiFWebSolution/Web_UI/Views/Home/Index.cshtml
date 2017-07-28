@@ -13,10 +13,12 @@
                     <ul class="nav navbar-nav">
                         <li><a class="scroll" href="#first">"Земля круглая"</a></li>
                         <li><a class="scroll" href="#second">"Закон притяжения"</a></li>
+                        <li><a class="scroll" href="#video">Видео</a></li>
                         @{
                             if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
                             {
                                 <li><a class="scroll" href="#accords">Тексты/Аккорды</a></li>
+                                
                             }
                         }
                         
@@ -127,8 +129,6 @@
     {
         <div id="accords" class="container-fluid bg-1 text-info">
 
-
-
             <hr />
             <h3>Тексты и аккорды песен</h3>
             <hr />
@@ -154,47 +154,64 @@
 }
 
 
-
-<!-- Fourth Container (Grid) -->
+<!-- Fourth Container -->
 @{
-    string colorStr = "";
+    //if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
+    //{
 
-    if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
-    {
-        colorStr = "container-fluid bg-2 text-info";
-    }
-    else
-    {
-        colorStr = "container-fluid bg-1 text-info";
-    }
-
-<div id="about" class="@colorStr">
-
-    <hr />
-    <h3>О группе:</h3>
-    <hr />
-        
-    <div>
-        <ul class="li-small my-margin">
-            <li>Год рождения - 1997г.</li>
-            <li>Место рождения - г. Перевальск, Луганская обл., Украина.</li>
-
-        </ul>
-
+    //}
+    <div id="video" class="container-fluid bg-1 text-center">
         <hr />
-        <p>Состав:</p>
-        <ul class="li-small my-margin">
-            <li>Меркулов Дмитрий - вокал, гитара, автор музыки</li>
-            <li>Филоненко Дмитрий - бас-гитара, автор текстов</li>
-            <li>Янчук Олег - гитара, клавишные</li>
-            <li>Чередниченко Алексей - барабаны</li>
-        </ul>
+        <h3> Видео</h3>
+        <hr />
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/m4q_j5nJI6A" frameborder="0" allowfullscreen></iframe>
+                
     </div>
-    <hr />
-</div>
 }
 
-<!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-    <a class="scroll" href="#start"><p>Официальный сайт группы "МиФ"</p></a>
-</footer>
+
+
+        <!-- Fifth Container (Grid) -->
+        @{
+            string colorStr = "";
+
+            if (Session["isLogIn"] != null && (bool)Session["isLogIn"] == true)
+            {
+                colorStr = "container-fluid bg-2 text-info";
+            }
+            else
+            {
+                colorStr = "container-fluid bg-1 text-info";
+            }
+
+            <div id="about" class="@colorStr">
+
+                <hr />
+                <h3>О группе:</h3>
+                <hr />
+
+                <div>
+                    <ul class="li-small my-margin">
+                        <li>Год рождения - 1997г.</li>
+                        <li>Место рождения - г. Перевальск, Луганская обл., Украина.</li>
+
+                    </ul>
+
+                    <hr />
+                    <p>Состав:</p>
+                    <ul class="li-small my-margin">
+                        <li>Меркулов Дмитрий - вокал, гитара, автор музыки</li>
+                        <li>Филоненко Дмитрий - бас-гитара, автор текстов</li>
+                        <li>Янчук Олег - гитара, клавишные</li>
+                        <li>Чередниченко Алексей - барабаны</li>
+                    </ul>
+                </div>
+                <hr />
+            </div>
+        }
+
+        <!-- Footer -->
+        <footer class="container-fluid bg-4 text-center">
+            <a class="scroll" href="#start"><p>Официальный сайт группы "МиФ"</p></a>
+        </footer>
