@@ -49,7 +49,7 @@ INSERT INTO Songs(MusicAuthorID, TextAuthorID, SongName, PathToText) VALUES(2, 1
 INSERT INTO Roles(RoleName) VALUES(N'registered');
 INSERT INTO Roles(RoleName) VALUES(N'admin');
 
-INSERT INTO Users(RoleID, UserName, UserPass) VALUES(2, N'admin', N'admin');
+INSERT INTO Users(RoleID, UserEmail, UserPass) VALUES(2, N'admin', N'admin');
 
 update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNclhRV2RhVnFXaFk/view' where SongID = 1 --1	С Тобой
 update Songs set [ExternalReference] = N'https://drive.google.com/file/d/0B5cV3rrg3NCNc3pVYmNlYlJuUXM/view' where SongID = 2 --2	Маньяк Сэм

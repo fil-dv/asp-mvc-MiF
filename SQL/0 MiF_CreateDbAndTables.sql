@@ -46,14 +46,19 @@ ALTER TABLE Songs ADD ExternalReference [nvarchar](255) null
 GO
 
 
+--drop TABLE Users
+--drop table Roles
+
+
 CREATE TABLE Roles([RoleID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 				   [RoleName] [nvarchar](255) not null); 
 GO
 
 CREATE TABLE Users([UserID] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 				   [RoleID] int null foreign key references [dbo].Roles(RoleID),
-				   [UserName] [nvarchar](255) not null,
-				   [UserPass] [nvarchar](255) not null); 
+				   [UserEmail] [nvarchar](255) not null,
+				   [UserPass] [nvarchar](255) not null,
+				   [isLogIn] bit); 
 GO
 
 GO

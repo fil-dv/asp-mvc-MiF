@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    
+<head>    
     
     @*//////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -25,9 +24,7 @@
     @Scripts.Render("~/bundles/bootstrap")
 
  
-    <script>
-
-       
+    <script>       
 
         $(document).ready(function () {
             $(window).scrollTop($('#mainID').offset().top).scrollLeft($('#mainID').offset().left);
@@ -54,15 +51,6 @@
             function GetSongText() {
 
                 var id = $("#songID").val();
-                //$("#Reg").load("/Region_DDL_/GetCities/" + id);
-                //$.ajax({
-                //    type: 'GET',
-                //    url: '/Region_DDL_/GetCities/', 
-                //    data: id,
-                //    success: function (data) {
-                //        $('#Reg').html(data);
-                //    }
-                //});
 
                 $.ajax({
                     type: 'POST',
@@ -72,8 +60,6 @@
                         $('#Song').html(data);
                     }
                 });
-
-
             }
 
             GetSongText();
@@ -85,32 +71,23 @@
             });
         });
 
+        $(function () {
+            $('.video-item').height($('.video-item').width() / 1.7);
 
-
-
-    </script>
-    
+            $(window).resize(function () {
+                $('.video-item').height($('.video-item').width() / 1.7);
+            });
+        });
+    </script>    
 </head>
 
-<body>
-    
-    @*<a style="visibility: hidden" ></a>*@
-    
+<body> 
 
-    <!-- First Container -->
     <div id="mainID" class="container-fluid bg-3 text-center">
-        @*<div class="row panel">*@
-
-            @*<div id="regions" class="col-xs-3">*@
-                @*@Html.Action("Menu", "Nav")*@
-            @*</div>*@
-            <div class="mymain col-xs-12">
-                @RenderBody()
-            </div>
-        @*</div>*@
-    </div>
-
-   
+        <div class="mymain col-xs-12">
+            @RenderBody()
+        </div>
+    </div>   
 
     @RenderSection("scripts", required: false)
 
